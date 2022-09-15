@@ -1,0 +1,156 @@
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
+  width: 100%;
+
+  background-color: #f7f7f7;
+  padding: 30px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  color: #545454;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 30px;
+    padding-bottom: 28px;
+    font-size: 16px;
+    line-height: 1.19;
+  }
+}
+
+.footer__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.footer__information-right {
+  position: relative;
+  display: flex;
+  margin-bottom: 5px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+  }
+}
+
+.footer__information-inner {
+  position: relative;
+  margin-bottom: 5px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+  }
+}
+
+.footer__text {
+  margin-right: 6px;
+}
+
+.footer__symbol {
+  margin-right: 4px;
+}
+
+.footer__text-right {
+  margin-left: 6px;
+  margin-right: 6px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    height: 100%;
+    width: 1px;
+
+    background-color: #545454;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    height: 100%;
+    width: 1px;
+
+    background-color: #545454;
+  }
+}
+
+.footer__information-about {
+  display: flex;
+  text-align: center;
+
+  @media screen and (min-width: 320px) {
+    text-align: left;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-left: 6px;
+  }
+}
+
+.footer__icon {
+  position: relative;
+  align-self: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  fill: #ff6b08;
+  animation: pulse 1500ms linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  10% {
+    transform: scale(0.95);
+  }
+}
+
+.footer__link {
+  position: relative;
+  color: #545454;
+  margin-left: 5px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+
+    height: 1px;
+    width: 100%;
+
+    background-color: #545454;
+  }
+    &:hover,
+    &:focus {
+      color: #FF6B08;
+    }
+}
+
+.footer__link:hover:after,
+.footer__link:focus:after {
+  background-color: #FF6B08;
+}

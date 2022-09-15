@@ -1,0 +1,279 @@
+.goit-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+
+    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.goit-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 10px 10px 44px 10px;
+    width: 280px;
+    height: auto;
+
+    transform: translate(-50%, -50%) scale(0.5);
+
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    @media screen and (max-width: 767px) {
+        width: 540px;
+        top: 50%;     
+    }
+
+    @media screen  and (min-width: 768px) and (max-width: 1279px) {
+        width: 1260px;
+        top: 50%;
+        padding-bottom: 30px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 1790px;
+    }
+}
+
+.goit-modal-open {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.goit-backdrop.is-goit-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.goit-backdrop.is-goit-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+.container-students {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    margin: auto;
+    text-align: center;
+    width: 240px;
+
+    @media screen and (max-width: 767px) {
+        width: 508px;
+        max-height: 100vh;
+        overflow-y: scroll;
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+        width: 1228px;
+        max-height: 100vh;
+        overflow-y: scroll;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 1760px;
+        max-height: 100vh;
+        overflow-y: scroll;
+    }
+}
+
+.container-students__list {
+
+    display: flex;
+    flex-wrap: wrap;
+    
+    @media screen and (max-width: 767px) {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        padding: 0 69px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+        margin-right: -45px;
+        padding: 0 20px;
+    }
+    @media screen and (min-width: 1280px) {
+        margin-right: -70px;
+        padding: 0 55px;
+    }
+}
+
+.student {
+   
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+
+    @media screen and (max-width: 767px) {
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+
+        &:not(:nth-child(3n+3)) {
+            margin-right: 45px;
+        }
+        &:not(:nth-last-child(-n+3)) {
+                
+            margin-bottom: 40px;
+        }
+    
+        flex-basis: calc((100% - 45px * 3) / 3)
+    }
+
+    @media screen and (min-width: 1280px) {
+        &:not(:nth-child(4n+4)) {
+            margin-right: 60px;
+        }
+       
+        &:nth-child(n+5) {
+            margin-top: 50px;
+        }
+        flex-basis: calc((100% - 60px * 4) / 4);
+    }
+
+
+    &__card {
+        width: 370px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        height: 140px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    &__name,
+    &__role {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &__name {
+        color: #000000;
+    }
+
+    &__role {
+        color: #FF6B08;
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    transform: scale(1);
+    transition: transform 250ms linear;
+
+}
+
+.student:hover,
+.student:focus {
+    transform: scale(1.1);
+}
+
+.container-students__title {
+    margin-bottom: 30px;
+
+    font-size: 50px;
+    line-height: 1.2;
+    color: #FF6B08;
+
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 30px;
+        font-size: 45px;
+    }
+}
+
+.button-goit-close {
+    position: absolute;
+    z-index: 2;
+    top: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    fill: #FF6B08;
+    background: rgba(0, 0, 0, 0.8);
+    border: 4px solid #FF6B08;
+    border-radius: 50%;
+
+    transition: fill 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        border-color: #ffffff;
+        fill: #ffffff;
+        background: #FF6B08;
+    }
+
+    @media screen and (max-width: 767px) {
+    top: 15px;
+    right: 15px;
+    }
+}
+
+
+.goit-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.goit-social-link {
+    display: flex;
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+.goit-social-link__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    color: rgba(0, 0, 0, 0.8);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        background-color: #FF6B08;
+        color: #ffffff;
+    }
+}
+
+.goit-social-link__icon {
+    fill: currentColor;
+}

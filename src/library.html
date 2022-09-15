@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/src/images/favicon.ico"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>My library</title>
+  </head>
+  <body data-page="lib">
+    <!-- По библиотеке пользователя все паршалы подключайте сюда -->
+    <!-- Это будет как вторая страничка -->
+    <div class="wrapper">
+      <include src="./partials/library-header.html"></include>
+      <!-- <include src="./partials/main.html"></include> -->
+      <include src="./partials/libraryMain.html"></include>
+      <include src="./partials/authorization-modal.html"></include>
+      <include src="./partials/footer.html"></include>
+      
+    </div>
+    <include src="./partials/loader.html"></include>
+    <include src="./partials/modal-form.html"></include>
+    <include src="./partials/scroll-to-top.html"></include>
+    <include src="./partials/goit-modal.html"></include>
+    <script type="module" src="./library.js"></script>
+  </body>
+</html>
